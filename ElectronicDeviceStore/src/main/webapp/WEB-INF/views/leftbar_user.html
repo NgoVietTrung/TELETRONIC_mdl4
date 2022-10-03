@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<th:block th:fragment="leftbar_user">
+    <div class="left-side-bar">
+        <div class="brand-logo">
+            <a>
+                <img src="/assets/vendors/images/white-banner.jpg" alt="" class="dark-logo">
+                <img src="/assets/vendors/images/dark-banner.jpg" alt="" class="light-logo">
+            </a>
+            <div class="close-sidebar" data-toggle="left-sidebar-close">
+                <i class="ion-close-round"></i>
+            </div>
+        </div>
+        <div class="menu-block customscroll">
+            <div class="sidebar-menu">
+                <ul id="accordion-menu">
+                    <li>
+                        <a th:href="@{/home/users/__${user.id}__}" class="dropdown-toggle no-arrow">
+                            <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:" class="dropdown-toggle">
+                            <span class="micon dw dw-group"></span><span class="mtext">User</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a th:href="@{/users/__${user.id}__}">List Product</a></li>
+                            <li><a href="/errors/404">Cart</a>
+                        </ul>
+                    </li>
+
+
+<!--                    <li style="background-color: #0f121f">-->
+<!--                        <a href="https://github.com/NgoVietTrung" target="_blank"-->
+<!--                           class="dropdown-toggle no-arrow">-->
+<!--                            <span class="icon-copy fa fa-github"></span>-->
+<!--                            <span style="border: 1px" class="mtext">Github-->
+<!--                                <img src="/assets/vendors/images/github.svg" alt="" width="25">-->
+<!--                            </span>-->
+<!--                        </a>-->
+<!--                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</th:block>
+
+
+
+

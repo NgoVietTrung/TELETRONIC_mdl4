@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Welcome</title>
+    <th:block th:replace="/layout/head_index :: head_index"/>
+
+</head>
+<body>
+<th:block th:replace="/pre-loader :: pre-loader"/>
+
+<th:block th:replace="/header :: header"/>
+
+<th:block th:replace="/right_bar :: right_bar"/>
+
+<th:block th:replace="/leftbar_admin :: leftbar_admin"/>
+
+<div class="mobile-menu-overlay"></div>
+
+<div class="main-container">
+    <div class="pd-ltr-20">
+        <div class="card-box pd-20 height-100-p mb-30">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img style="width: 200px; height: 200px" src="/assets/vendors/images/hello.jpg" alt="">
+                </div>
+                <div class="col-md-8">
+                    <h4 class="font-20 weight-500 mb-10 text-capitalize">
+                        Welcome back <div class="weight-600 font-30 text-blue" th:text = "${user.fullName + '!'}" ></div>
+                    </h4>
+                    <p class="font-18 max-width-600">Have a nice day</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-box mb-30">
+            <h2 class="h4 pd-20" >Best Selling Products</h2>
+            <table class="data-table table nowrap">
+                <thead>
+                <tr style="background-color: #0b132b; color: #FFFFFF">
+                    <th class="table-plus datatable-nosort">Product</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Oty</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="table-plus">
+                        <img src="http://livedemo00.template-help.com/woocommerce_48364/wp-content/uploads/2013/09/fairhills_merlot_-_fair_trade_wine_1.png" width="70" height="70" alt="">
+                    </td>
+                    <td>
+                        <h5 class="font-16">FAIRHILLS MERLOT</h5>
+
+                    </td>
+                    <td>Vermouth</td>
+                    <td>$800</td>
+                    <td>5</td>
+                    <td>
+                        <div class="dropdown">
+                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+
+                            </a>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-plus">
+                        <img src="http://livedemo00.template-help.com/woocommerce_48364/wp-content/uploads/2013/09/makulu_iswithi_pinotage_1.png" width="70" height="70" alt="">
+                    </td>
+                    <td>
+                        <h5 class="font-16">MAKULU ISWITHI PINOTAGE</h5>
+
+                    </td>
+                    <td>Whitewine</td>
+                    <td>$300</td>
+                    <td>1</td>
+                    <td>
+                        <div class="dropdown">
+                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+
+                            </a>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-plus">
+                        <img src="http://livedemo00.template-help.com/woocommerce_48364/wp-content/uploads/2013/09/los_cowboys_torrontes_1.png" width="70" height="70" alt="">
+                    </td>
+                    <td>
+                        <h5 class="font-16">LOS COWBOYS MALBEC</h5>
+
+                    </td>
+                    <td>Champagne</td>
+                    <td>$500</td>
+                    <td>4</td>
+                    <td>
+                        <div class="dropdown">
+                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+
+                            </a>
+
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+<!--        <th:block th:replace="/layout/footer :: footer"/>-->
+    </div>
+</div>
+<th:block th:replace="/layout/script_index :: script_index"/>
+</body>
+
+
+</html>
