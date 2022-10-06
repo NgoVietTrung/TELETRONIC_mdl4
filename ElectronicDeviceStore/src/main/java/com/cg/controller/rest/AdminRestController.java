@@ -59,7 +59,7 @@ public class AdminRestController {
         Optional<ProductDTO> productDTOs = productService.findProductDTOByID(id);
 
         if (!productDTOs.isPresent()) {
-            return new ResponseEntity<>("Wine ID :" + id + "not found" + "!", HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>("Product ID :" + id + "not found" + "!", HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(productDTOs.get(), HttpStatus.OK);
     }
@@ -126,7 +126,7 @@ public class AdminRestController {
         Optional<Product> p = productService.findById(id);
 
         if (!p.isPresent()) {
-            return new ResponseEntity<>("This wine is not found!", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("This product is not found!", HttpStatus.NOT_FOUND);
         }
 
         new ProductDTO().validate(productDTO,bindingResult);
@@ -238,7 +238,7 @@ public class AdminRestController {
             Optional<Product> product = productService.findById(id);
 
             if (!product.isPresent()) {
-                return new ResponseEntity<>("This wine is not found!", HttpStatus.NOT_FOUND);
+                return new ResponseEntity<>("This product is not found!", HttpStatus.NOT_FOUND);
             }
             return new ResponseEntity<>(product.get(), HttpStatus.OK);
 

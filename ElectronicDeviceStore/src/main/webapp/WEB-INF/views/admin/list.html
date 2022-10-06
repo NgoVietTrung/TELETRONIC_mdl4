@@ -190,11 +190,10 @@
                 $('#productNameUp').val(product.productName);
                 $('#categoryUp').val(product.category.id);
                 $('#imageUp').val(product.urlImage);
-                // $('#capacityUp').val(product.capacity.id);
+
                 $('#priceUp').val(product.price);
                 $('#quantityUp').val(product.quantity);
-                // $('#yearUp').val(product.year);
-                // $('#originUp').val(product.origin);
+
 
 
                 $('#modalUpdateProduct').modal('show');
@@ -224,14 +223,6 @@
 
             findById(id).then(function () {
 
-                // $('#productNameRead').val(product.productName);
-                // $('#categoryRead').val(product.category.id);
-                // $('#imageRead').val(product.urlImage);
-                // $('#capacityRead').val(product.capacity.id);
-                // $('#priceRead').val(product.price);
-                // // $('#quantityRead').val(product.quantity);
-                // $('#yearRead').val(product.year);
-                // $('#originRead').val(product.origin);
 
 
                 $('#modalReadProduct').modal('show');
@@ -478,6 +469,12 @@
                                 <label style="margin-top: 4px;" class = "label btn btn-light" for="priceRead"><strong>Price</strong></label>
                                 <p style="color: #af0707; margin-bottom: 2px; font-size: 15px" id="priceRead" name="priceRead"><strong><i>$${item.price}</i></strong></p>
                             </div>
+                            <div class="col-sm-12">
+                                <label style="margin-top: 4px;" class = "label btn btn-light" for="priceRead"><strong>Quantity</strong></label>
+                                <p style="color: #172a8a; margin-bottom: 2px; font-size: 15px" id="priceRead" name="priceRead"><strong><i>${item.quantity}</i></strong></p>
+                            </div>
+
+
 
 
                         </div>

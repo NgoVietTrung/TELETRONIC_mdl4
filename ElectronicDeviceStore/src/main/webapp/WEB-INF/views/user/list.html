@@ -84,7 +84,7 @@
                         </div>
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                                <li class="breadcrumb-item">Home</li>
                                 <li class="breadcrumb-item">Product</li>
 
                             </ol>
@@ -103,7 +103,7 @@
 <!--                            <option value="3">Trên 1000$</option>-->
 <!--                        </select>-->
 <!--                    </div>-->
-                    <div class="col-sm-3"></div>
+                    <div class="col-sm-8"></div>
                     <div class="col-sm-4 header-search">
                         <form>
                             <div class="form-group mb-0" style="margin-top: 34px">
@@ -154,14 +154,13 @@
             .done((item) => {
                 $.each(item, (i, item) => {
                     let str = `
-                        <li class="col-lg-3 col-md-6 col-sm-12">
+                        <li class="col-lg-4 col-md-6 col-sm-12">
                             <div class="product-box">
                                 <div class="producct-img"><img src="${item.urlImage}" alt=""/></div>
                                 <div class="product-caption">
                                     <h4><a style="margin-bottom: 30px; " href="#">${item.productName}</a></h4>
+
                                     <div class="price">
-                                        <!-- <del>$55.5</del><ins>$49.5</ins> -->
-                                        <!-- <ins style="color: #9d1515">$${item.price}</ins> -->
                                         <ins  style="margin-bottom: -10px; color: #af0707">$${item.price}</ins>
                                     </div>
                                     <div class="price" style="text-decoration: none">
@@ -655,7 +654,7 @@
 
                 $.each(item, (i, item) => {
                     let str = `
-                        <li class="col-lg-3 col-md-6 col-sm-12">
+                        <li class="col-lg-4 col-md-6 col-sm-12">
                             <div class="product-box">
                                 <div class="producct-img"><img src="${item.urlImage}" alt=""/></div>
                                 <div class="product-caption">
@@ -704,7 +703,7 @@
                 console.log(item);
                 $.each(item, (i, item) => {
                     let str = `
-                        <li class="col-lg-3 col-md-6 col-sm-12">
+                        <li class="col-lg-4 col-md-6 col-sm-12">
                             <div class="product-box">
                                 <div class="producct-img"><img src="${item.urlImage}" alt=""/></div>
                                 <div class="product-caption">
@@ -736,50 +735,50 @@
             })
     })
 
-    $("#filterPrice").on('change', () => {
-        let price = $("#filterPrice").val();
-
-        $.ajax({
-            "headers": {
-                "accept": "application/json",
-                "content-type": "application/json"
-            },
-            "type": "POST",
-            "url": "http://localhost:8080/api/admins/filter",
-            "data": JSON.stringify(price)
-        })
-            .done((item) => {
-                $("#product-list").html("");
-                console.log(item);
-                $.each(item, (i, item) => {
-                    let str = `
-                        <li class="col-lg-3 col-md-6 col-sm-12">
-                            <div class="product-box">
-                                <div class="producct-img"><img src="${item.urlImage}" alt=""/></div>
-                                <div class="product-caption">
-                                    <h4><a style="margin-bottom: 30px; " href="#">${item.productName}</a></h4>
-                                    <div class="price">
-                                        <!-- <del>$55.5</del><ins>$49.5</ins> -->
-                                        <!-- <ins style="color: #9d1515">$${item.price}</ins> -->
-                                        <ins  style="margin-bottom: -10px; color: #af0707">$${item.price}</ins>
-                                    </div>
-                                    <div class="price" style="text-decoration: none">
-                                        <ins data-id = "${item.id}"><span style="color: #178a17"> ${item.status.status} : ${item.quantity}</span></ins>
-                                    </div>
-
-                                    <div>
-                                        <button data-id = "${item.id}" style="margin-bottom: 5px" href="" class="btn btn-outline-warning btn-sm read"><i class="icon-copy fa fa-list-alt" aria-hidden="true"></i> Read more</button>
-                                        <button href="" class="btn btn-outline-primary btn-sm cart"><i class="icon-copy fa fa-shopping-cart" aria-hidden="true"></i> Add to cart(Updating)</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    `;
-                    $("#product-list").append(str);
-                })
-                handleBtn();
-            })
-    })
+    // $("#filterPrice").on('change', () => {
+    //     let price = $("#filterPrice").val();
+    //
+    //     $.ajax({
+    //         "headers": {
+    //             "accept": "application/json",
+    //             "content-type": "application/json"
+    //         },
+    //         "type": "POST",
+    //         "url": "http://localhost:8080/api/admins/filter",
+    //         "data": JSON.stringify(price)
+    //     })
+    //         .done((item) => {
+    //             $("#product-list").html("");
+    //             console.log(item);
+    //             $.each(item, (i, item) => {
+    //                 let str = `
+    //                     <li class="col-lg-3 col-md-6 col-sm-12">
+    //                         <div class="product-box">
+    //                             <div class="producct-img"><img src="${item.urlImage}" alt=""/></div>
+    //                             <div class="product-caption">
+    //                                 <h4><a style="margin-bottom: 30px; " href="#">${item.productName}</a></h4>
+    //                                 <div class="price">
+    //                                     <!-- <del>$55.5</del><ins>$49.5</ins> -->
+    //                                     <!-- <ins style="color: #9d1515">$${item.price}</ins> -->
+    //                                     <ins  style="margin-bottom: -10px; color: #af0707">$${item.price}</ins>
+    //                                 </div>
+    //                                 <div class="price" style="text-decoration: none">
+    //                                     <ins data-id = "${item.id}"><span style="color: #178a17"> ${item.status.status} : ${item.quantity}</span></ins>
+    //                                 </div>
+    //
+    //                                 <div>
+    //                                     <button data-id = "${item.id}" style="margin-bottom: 5px" href="" class="btn btn-outline-warning btn-sm read"><i class="icon-copy fa fa-list-alt" aria-hidden="true"></i> Read more</button>
+    //                                     <button href="" class="btn btn-outline-primary btn-sm cart"><i class="icon-copy fa fa-shopping-cart" aria-hidden="true"></i> Add to cart(Updating)</button>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </li>
+    //                 `;
+    //                 $("#product-list").append(str);
+    //             })
+    //             handleBtn();
+    //         })
+    // })
 
     function showGender() {
 
