@@ -113,7 +113,7 @@ public class ProductDTO implements Validator {
 
                 long validQuantity = Integer.parseInt(quantity);
                 if (validQuantity < 0) {
-                    errors.rejectValue("quantity", "400", "Wine quantity cannot be a negative number!");
+                    errors.rejectValue("quantity", "400", "Quantity cannot be a negative number!");
                 }
 
                 if (validQuantity > 1000) {
@@ -133,12 +133,12 @@ public class ProductDTO implements Validator {
 
         } else {
             if (price.length() > 5) {
-                errors.rejectValue("price", "400", "Maximum of wine price is 10.000$!");
+                errors.rejectValue("price", "400", "Maximum of product price is 10.000$!");
             } else {
 
                 long validPrice = Long.parseLong(price);
                 if (validPrice < 0) {
-                    errors.rejectValue("price", "400", "Wine price cannot be a negative number!");
+                    errors.rejectValue("price", "400", "Product price cannot be a negative number!");
                 }
 
                 if (validPrice > 10000) {
